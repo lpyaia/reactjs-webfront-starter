@@ -60,6 +60,11 @@ class Menu extends React.Component {
                 path: "/everybody-logged",
                 icon: "bx bx-home-circle",
             },
+            {
+                name: "Unclokable Content",
+                path: "/unlockable-content",
+                icon: "bx bx-home-circle",
+            },
         ];
 
         return menuItems;
