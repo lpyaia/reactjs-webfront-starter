@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import RoleAccess from "../../enums/RoleEnum";
+import { useLocation, useHistory } from "react-router-dom";
 
 async function loginUser(credentials) {
     console.log(credentials);
@@ -12,6 +13,9 @@ export default function Login({ setToken }) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
 
+    const hist = useHistory();
+    const location = useLocation();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -21,6 +25,8 @@ export default function Login({ setToken }) {
         });
 
         setToken(token);
+
+        if (location.pathname === "/login") hist.goBack();
     };
 
     return (
@@ -181,4 +187,5 @@ export default function Login({ setToken }) {
 
 Login.propTypes = {
     setToken: PropTypes.func.isRequired,
+    previousLocation: PropTypes.string,
 };

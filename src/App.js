@@ -16,6 +16,7 @@ import {
     EverybodyLoggedPage,
 } from "./pages/roles/RoleAccess";
 import RoleAccess from "./enums/RoleEnum";
+import { useLocation, useHistory } from "react-router-dom";
 
 /****
     Route: 
@@ -37,7 +38,7 @@ function App() {
         <div>
             <Switch>
                 <Route path="/login">
-                    <Login />
+                    <Login setToken={setUserInfo} />
                 </Route>
                 <Route path="/register">
                     <Register />
