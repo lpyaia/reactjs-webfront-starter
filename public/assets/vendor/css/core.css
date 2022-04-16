@@ -7741,7 +7741,7 @@ button:focus {
 .form-floating > .form-control:not(:placeholder-shown)::placeholder {
   color: #b4bdc6;
 }
-
+/* 
 .valid-feedback {
   display: none;
   width: 100%;
@@ -7933,7 +7933,7 @@ form select.is-invalid ~ .select2 .select2-selection {
 form select.selectpicker.is-invalid ~ .btn {
   border-color: 1px solid #ff3e1d;
   border-color: #ff3e1d;
-}
+} */
 
 .modal-content {
   box-shadow: 0 2px 16px 0 rgba(67, 89, 113, 0.45);

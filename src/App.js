@@ -1,3 +1,4 @@
+import { hot } from "react-hot-loader";
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Content from "./components/content/Content";
@@ -16,7 +17,6 @@ import {
     EverybodyLoggedPage,
 } from "./pages/roles/RoleAccess";
 import RoleAccess from "./enums/RoleEnum";
-import { useLocation, useHistory } from "react-router-dom";
 
 /****
     Route: 
@@ -72,4 +72,4 @@ function App() {
     );
 }
 
-export default App;
+export default hot(module)(App);

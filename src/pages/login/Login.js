@@ -66,9 +66,9 @@ export default function Login({ setToken }) {
                                             <g
                                                 id="g-app-brand"
                                                 stroke="none"
-                                                stroke-width="1"
+                                                strokeWidth="1"
                                                 fill="none"
-                                                fill-rule="evenodd"
+                                                fillRule="evenodd"
                                             >
                                                 <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
                                                     <g id="Icon" transform="translate(27.000000, 15.000000)">
@@ -80,7 +80,7 @@ export default function Login({ setToken }) {
                                                             <g id="Path-3" mask="url(#mask-2)">
                                                                 <use fill="#696cff" xlinkHref="#path-3"></use>
                                                                 <use
-                                                                    fill-opacity="0.2"
+                                                                    fillOpacity="0.2"
                                                                     fill="#FFFFFF"
                                                                     xlinkHref="#path-3"
                                                                 ></use>
@@ -88,7 +88,7 @@ export default function Login({ setToken }) {
                                                             <g id="Path-4" mask="url(#mask-2)">
                                                                 <use fill="#696cff" xlinkHref="#path-4"></use>
                                                                 <use
-                                                                    fill-opacity="0.2"
+                                                                    fillOpacity="0.2"
                                                                     fill="#FFFFFF"
                                                                     xlinkHref="#path-4"
                                                                 ></use>
@@ -100,7 +100,7 @@ export default function Login({ setToken }) {
                                                         >
                                                             <use fill="#696cff" xlinkHref="#path-5"></use>
                                                             <use
-                                                                fill-opacity="0.2"
+                                                                fillOpacity="0.2"
                                                                 fill="#FFFFFF"
                                                                 xlinkHref="#path-5"
                                                             ></use>
