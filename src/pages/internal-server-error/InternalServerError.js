@@ -16,7 +16,7 @@ export default function InternalServerError() {
                 <div className="mt-3">
                     <img
                         src={internalServerError}
-                        alt="403-forbidden-amico"
+                        alt="500-internalerror-amico"
                         style={{ height: "400px", width: "500px" }}
                         className="img-fluid"
                     />

@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import AuthService from "../../services/AuthService";
 
 class Register extends React.Component {
     constructor(props) {
@@ -15,6 +16,8 @@ class Register extends React.Component {
             hasPasswordValidationError: false,
             passwordValidationErrorMsg: "",
         };
+
+        this.authService = new AuthService();
     }
 
     handleChange(event) {
@@ -23,16 +26,32 @@ class Register extends React.Component {
         this.setState(change);
     }
 
-    handleSubmit(e) {
+    async handleSubmit(e) {
+        const form = e.currentTarget;
+
         e.preventDefault();
         e.stopPropagation();
 
-        this.passwordValidation();
+        if (this.passwordConfirmHasError() || form.checkValidity() === false) {
+            this.setState({ validated: true });
+        } else {
+            const { username, email, password } = this.state;
 
-        this.setState({ validated: true });
+            try {
+                var response = await this.authService.registro({
+                    username,
+                    email,
+                    password,
+                });
+
+                console.log("response: ", response);
+            } catch (err) {
+                console.log("err: ", err);
+            }
+        }
     }
 
-    passwordValidation() {
+    passwordConfirmHasError() {
         const hasPasswordValidationError = this.state.password !== this.state.confirmPassword;
         let passwordValidationErrorMsg = "";
 
@@ -41,6 +60,8 @@ class Register extends React.Component {
         }
 
         this.setState({ hasPasswordValidationError, passwordValidationErrorMsg });
+
+        return hasPasswordValidationError;
     }
 
     render() {

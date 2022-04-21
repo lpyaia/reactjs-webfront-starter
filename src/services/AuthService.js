@@ -1,9 +1,7 @@
-import HttpClient from "../utils/HttpClient";
+import frontendApi from "../utils/FrontEndApi";
 
 class AuthService {
-    constructor() {
-        this.httpClient = new HttpClient({ baseURL: process.env.API_URL, headers: { algumacoisa: "teste" } });
-    }
+    constructor() {}
 
     login(usuario) {
         const res = this.httpClient.post(usuario);
@@ -12,9 +10,7 @@ class AuthService {
     }
 
     registro(usuario) {
-        debugger;
-        const res = this.httpClient.post(usuario);
-        debugger;
+        return frontendApi.post("/registro", usuario);
     }
 }
 

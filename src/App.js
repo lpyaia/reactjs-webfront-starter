@@ -17,6 +17,10 @@ import {
     EverybodyLoggedPage,
 } from "./pages/roles/RoleAccess";
 import RoleAccess from "./enums/RoleEnum";
+import Forbidden from "./pages/forbidden/Forbidden";
+import InternalServerError from "./pages/internal-server-error/InternalServerError";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 /****
     Route: 
@@ -30,18 +34,28 @@ import RoleAccess from "./enums/RoleEnum";
 ****/
 
 function App() {
+    console.log(process.env.FOO); //printing it to console
+    console.log(process.env.API_URL); //printing it to console
+
     const { userInfo, setUserInfo } = useToken();
 
     if (!userInfo?.token) return <Login setToken={setUserInfo} />;
 
     return (
         <div>
+            <ToastContainer autoClose={3000} theme={"colored"} />
             <Switch>
                 <Route path="/login">
                     <Login setToken={setUserInfo} />
                 </Route>
                 <Route path="/register">
                     <Register />
+                </Route>
+                <Route path="/forbidden">
+                    <Forbidden></Forbidden>
+                </Route>
+                <Route path="/sorry">
+                    <InternalServerError></InternalServerError>
                 </Route>
                 <DefaultRoutes exact path="/" component={Content} />
                 <DefaultRoutes path="/blank" component={Blank} />
