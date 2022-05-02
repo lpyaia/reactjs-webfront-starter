@@ -17,8 +17,8 @@ import {
     EverybodyLoggedPage,
 } from "./pages/roles/roleAccess";
 import RoleAccess from "./enums/roleEnum";
-import Forbidden from "./pages/forbidden/Forbidden";
-import InternalServerError from "./pages/internal-server-error/InternalServerError";
+import Forbidden from "./pages/forbidden/forbidden";
+import InternalServerError from "./pages/internal-server-error/internalServerError";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Spinner, { spinnerIsEnabled } from "./components/app/spinner";

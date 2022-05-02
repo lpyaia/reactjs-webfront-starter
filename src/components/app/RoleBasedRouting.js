@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { grantPermission } from "./grantPermission";
-import Forbidden from "../../pages/forbidden/Forbidden";
+import Forbidden from "../../pages/forbidden/forbidden";
 import DefaultRoutes from "./defaultRoutes";
 
 const RoleBasedRouting = ({ component: Component, roles, isDefaultLayout = true, ...rest }) => {
