@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
-import RoleAccess from "../../enums/RoleEnum";
-import { AdminAndPartnerPage, AdminPage, CustomerPage, EverybodyLoggedPage, PartnerPage } from "../roles/RoleAccess";
-import { UnlockAccess } from "../../components/app/UnlockAccess";
+import RoleAccess from "../../enums/roleEnum";
+import { AdminAndPartnerPage, AdminPage, CustomerPage, EverybodyLoggedPage, PartnerPage } from "../roles/roleAccess";
+import { UnlockAccess } from "../../components/app/unlockAccess";
 
-export default function UnlockablePage() {
+const UnlockablePage = () => {
     return (
         <Fragment>
             <UnlockAccess allowedRoles={[RoleAccess.Admin]}>
@@ -23,4 +23,6 @@ export default function UnlockablePage() {
             </UnlockAccess>
         </Fragment>
     );
-}
+};
+
+export default UnlockablePage;

@@ -13,7 +13,7 @@ module.exports = (env) => {
             static: path.resolve(__dirname, "./public"),
             open: true,
             compress: true,
-            hot: true,
+            hot: false,
             port: 8080,
         },
 

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { grantPermission } from "./GrantPermission";
+import { grantPermission } from "./grantPermission";
 
 export const UnlockAccess = ({ children, allowedRoles }) => {
     const permission = grantPermission(allowedRoles);

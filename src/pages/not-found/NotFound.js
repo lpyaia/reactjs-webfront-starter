@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import error from "../../../public/assets/img/illustrations/page-misc-error-light.png";
 
-export default function NotFound() {
+const NotFound = () => {
     return (
         <div className="d-flex justify-content-center mt-5">
             <div className="misc-wrapper">
@@ -24,4 +24,6 @@ export default function NotFound() {
             </div>
         </div>
     );
-}
+};
+
+export default NotFound;

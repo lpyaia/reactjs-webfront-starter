@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import internalServerError from "../../../public/assets/img/illustrations/500-internal-server-error.png";
 
-export default function InternalServerError() {
+const InternalServerError = () => {
     return (
         <div className="d-flex justify-content-center mt-5">
             <div className="misc-wrapper">
@@ -24,4 +24,6 @@ export default function InternalServerError() {
             </div>
         </div>
     );
-}
+};
+
+export default InternalServerError;

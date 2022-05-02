@@ -1,8 +1,8 @@
 const RoleAccess = {
-    Everybody: 0,
-    Admin: 1,
-    Customer: 2,
-    Partner: 3,
+    Everybody: "Everybody",
+    Admin: "Admin",
+    Customer: "Customer",
+    Partner: "Partner",
 };
 
 export default RoleAccess;

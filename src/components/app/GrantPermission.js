@@ -1,11 +1,12 @@
-import RoleAccess from "../../enums/RoleEnum";
+import RoleAccess from "../../enums/roleEnum";
 
 export const grantPermission = (requestedRoles) => {
     if (pageHasNotRestrictions(requestedRoles)) return true;
 
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    const role = userInfo?.claims?.find((claim) => claim.type === "role");
 
-    return requestedRoles.includes(userInfo?.role);
+    return requestedRoles.includes(role?.value);
 };
 
 function pageHasNotRestrictions(requestedRoles) {

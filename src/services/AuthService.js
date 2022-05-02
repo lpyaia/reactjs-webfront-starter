@@ -1,16 +1,21 @@
-import frontendApi from "../utils/FrontEndApi";
+import backendApi from "../utils/backendApi";
 
 class AuthService {
     constructor() {}
 
     login(usuario) {
-        const res = this.httpClient.post(usuario);
-
         // salvar token, fazer login
     }
 
-    registro(usuario) {
-        return frontendApi.post("/registro", usuario);
+    async registro(usuario) {
+        const response = await backendApi.post("/registro", usuario);
+
+        const userInfo = {
+            accessToken: response.accessToken,
+            claims: response.userToken.claims,
+        };
+
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
     }
 }
 

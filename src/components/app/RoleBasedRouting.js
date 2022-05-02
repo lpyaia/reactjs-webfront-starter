@@ -1,25 +1,20 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Route } from "react-router-dom";
-import { grantPermission } from "./GrantPermission";
+import { grantPermission } from "./grantPermission";
 import Forbidden from "../../pages/forbidden/Forbidden";
-import DefaultRoutes from "./DefaultRoutes";
+import DefaultRoutes from "./defaultRoutes";
 
-export default function RoleBasedRouting({ component: Component, roles, isDefaultLayout = true, ...rest }) {
+const RoleBasedRouting = ({ component: Component, roles, isDefaultLayout = true, ...rest }) => {
     return (
         <Fragment>
             {grantPermission(roles) && render(isDefaultLayout, Component, rest)}
-            {!grantPermission(roles) && <Route render={() => <Forbidden />} />}
+            {!grantPermission(roles) && <Forbidden />}
         </Fragment>
     );
-}
+};
 
 function render(isDefaultLayout, Component, rest) {
-    return isDefaultLayout ? (
-        <DefaultRoutes {...rest} component={(props) => Component(props)} />
-    ) : (
-        <Route render={() => <Component />} />
-    );
+    return isDefaultLayout ? <DefaultRoutes {...rest} component={(props) => Component(props)} /> : <Component />;
 }
 
 RoleBasedRouting.propTypes = {
@@ -27,3 +22,5 @@ RoleBasedRouting.propTypes = {
     roles: PropTypes.any.isRequired,
     isDefaultLayout: PropTypes.bool,
 };
+
+export default RoleBasedRouting;

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import forbidden from "../../../public/assets/img/illustrations/403-forbidden-amico.png";
 
-export default function Forbidden() {
+const Forbidden = () => {
     return (
         <div className="d-flex justify-content-center mt-5">
             <div className="misc-wrapper">
@@ -24,4 +24,6 @@ export default function Forbidden() {
             </div>
         </div>
     );
-}
+};
+
+export default Forbidden;
